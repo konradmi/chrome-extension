@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Hello Extensions",
-  "description": "Test Extension",
+  "name": "Extension",
+  "description": "iFrame PoC Extension",
   "version": "1.0",
   "action": {
     "default_popup": "index.html",
@@ -10,8 +10,12 @@
   "content_scripts": [
     {
       "js": ["scripts/content.js"],
+      "match_about_blank": true,
+      "all_frames": true,
       "matches": [
-        "https://developer.chrome.com/docs/extensions/*"
+        "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe",
+        "https://interactive-examples.mdn.mozilla.net/pages/tabbed/iframe.html",
+        "https://www.openstreetmap.org/export/*"
       ]
     }
   ]
